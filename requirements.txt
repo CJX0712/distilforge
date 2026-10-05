@@ -1,0 +1,8 @@
+# DistilForge 运行时依赖（Tier-0 顶级开源：scikit-learn + numpy + scipy）
+numpy>=2.0
+scikit-learn>=1.5.0
+scipy>=1.11
+
+# 开发 / CI 依赖
+pytest>=8.0
+ruff>=0.5

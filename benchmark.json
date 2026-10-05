@@ -1,0 +1,645 @@
+{
+  "system": "DistilForge",
+  "author": "晨星",
+  "config": {
+    "temperature": 4.0,
+    "alpha": 0.5,
+    "lr": 0.1,
+    "n_epochs": 400,
+    "batch_size": 128,
+    "weight_decay": 0.0001,
+    "student_type": "mlp",
+    "teacher_type": "random_forest",
+    "n_hidden": 32
+  },
+  "seeds": [
+    20261005,
+    20261006,
+    20261007
+  ],
+  "headline_kpi": {
+    "metric": "synthetic_spectrum_mean_rel_error_drop",
+    "mean": 0.06710710811728093,
+    "std": 0.006484371468898056,
+    "threshold": 0.05,
+    "pass": true
+  },
+  "datasets": [
+    {
+      "dataset": "synth_easy",
+      "aggregated": [
+        {
+          "method": "teacher",
+          "mean_accuracy": 0.745,
+          "std_accuracy": 0.005931710140017377,
+          "mean_error": 0.255,
+          "std_error": 0.005931710140017377,
+          "mean_rel_drop": null,
+          "std_rel_drop": null
+        },
+        {
+          "method": "hard",
+          "mean_accuracy": 0.6983333333333333,
+          "std_accuracy": 0.012095300587265137,
+          "mean_error": 0.3016666666666667,
+          "std_error": 0.012095300587265137,
+          "mean_rel_drop": null,
+          "std_rel_drop": null
+        },
+        {
+          "method": "pseudo",
+          "mean_accuracy": 0.6983333333333333,
+          "std_accuracy": 0.012095300587265137,
+          "mean_error": 0.3016666666666667,
+          "std_error": 0.012095300587265137,
+          "mean_rel_drop": 0.0,
+          "std_rel_drop": 0.0
+        },
+        {
+          "method": "distill",
+          "mean_accuracy": 0.721111111111111,
+          "std_accuracy": 0.015475986974649051,
+          "mean_error": 0.2788888888888889,
+          "std_error": 0.015475986974649053,
+          "mean_rel_drop": 0.07606577713947116,
+          "std_rel_drop": 0.014147056790150042
+        }
+      ],
+      "paired_p_value": 0.01111470610035728,
+      "wins_vs_hard": 3,
+      "n_seeds": 3
+    },
+    {
+      "dataset": "synth_mid",
+      "aggregated": [
+        {
+          "method": "teacher",
+          "mean_accuracy": 0.6876190476190476,
+          "std_accuracy": 0.0029354352395090234,
+          "mean_error": 0.31238095238095237,
+          "std_error": 0.0029354352395090234,
+          "mean_rel_drop": null,
+          "std_rel_drop": null
+        },
+        {
+          "method": "hard",
+          "mean_accuracy": 0.629047619047619,
+          "std_accuracy": 0.017548119783512676,
+          "mean_error": 0.370952380952381,
+          "std_error": 0.017548119783512676,
+          "mean_rel_drop": null,
+          "std_rel_drop": null
+        },
+        {
+          "method": "pseudo",
+          "mean_accuracy": 0.629047619047619,
+          "std_accuracy": 0.017548119783512676,
+          "mean_error": 0.370952380952381,
+          "std_error": 0.017548119783512676,
+          "mean_rel_drop": 0.0,
+          "std_rel_drop": 0.0
+        },
+        {
+          "method": "distill",
+          "mean_accuracy": 0.6528571428571429,
+          "std_accuracy": 0.008806305718527077,
+          "mean_error": 0.34714285714285714,
+          "std_error": 0.008806305718527077,
+          "mean_rel_drop": 0.06093151388753255,
+          "std_rel_drop": 0.06884359097307609
+        }
+      ],
+      "paired_p_value": 0.3295683444090587,
+      "wins_vs_hard": 2,
+      "n_seeds": 3
+    },
+    {
+      "dataset": "synth_hard",
+      "aggregated": [
+        {
+          "method": "teacher",
+          "mean_accuracy": 0.6640740740740739,
+          "std_accuracy": 0.0022831162973959078,
+          "mean_error": 0.33592592592592596,
+          "std_error": 0.0022831162973959078,
+          "mean_rel_drop": null,
+          "std_rel_drop": null
+        },
+        {
+          "method": "hard",
+          "mean_accuracy": 0.6581481481481481,
+          "std_accuracy": 0.015026268722296914,
+          "mean_error": 0.34185185185185185,
+          "std_error": 0.015026268722296914,
+          "mean_rel_drop": null,
+          "std_rel_drop": null
+        },
+        {
+          "method": "pseudo",
+          "mean_accuracy": 0.6581481481481481,
+          "std_accuracy": 0.015026268722296914,
+          "mean_error": 0.34185185185185185,
+          "std_error": 0.015026268722296914,
+          "mean_rel_drop": 0.0,
+          "std_rel_drop": 0.0
+        },
+        {
+          "method": "distill",
+          "mean_accuracy": 0.6803703703703704,
+          "std_accuracy": 0.012872701627394637,
+          "mean_error": 0.31962962962962965,
+          "std_error": 0.012872701627394637,
+          "mean_rel_drop": 0.06432403332483912,
+          "std_rel_drop": 0.03166142272176261
+        }
+      ],
+      "paired_p_value": 0.10377857010355815,
+      "wins_vs_hard": 3,
+      "n_seeds": 3
+    },
+    {
+      "dataset": "digits",
+      "aggregated": [
+        {
+          "method": "teacher",
+          "mean_accuracy": 0.969753086419753,
+          "std_accuracy": 0.0008729713347981688,
+          "mean_error": 0.03024691358024693,
+          "std_error": 0.0008729713347981688,
+          "mean_rel_drop": null,
+          "std_rel_drop": null
+        },
+        {
+          "method": "hard",
+          "mean_accuracy": 0.9685185185185187,
+          "std_accuracy": 0.004000457221239434,
+          "mean_error": 0.03148148148148148,
+          "std_error": 0.004000457221239434,
+          "mean_rel_drop": null,
+          "std_rel_drop": null
+        },
+        {
+          "method": "pseudo",
+          "mean_accuracy": 0.9685185185185187,
+          "std_accuracy": 0.004000457221239434,
+          "mean_error": 0.03148148148148148,
+          "std_error": 0.004000457221239434,
+          "mean_rel_drop": 0.0,
+          "std_rel_drop": 0.0
+        },
+        {
+          "method": "distill",
+          "mean_accuracy": 0.9364197530864198,
+          "std_accuracy": 0.00230966505356415,
+          "mean_error": 0.06358024691358026,
+          "std_error": 0.00230966505356415,
+          "mean_rel_drop": -1.0469228627123368,
+          "std_rel_drop": 0.2193716532091298
+        }
+      ],
+      "paired_p_value": 0.0025787480760442764,
+      "wins_vs_hard": 0,
+      "n_seeds": 3
+    }
+  ],
+  "records": [
+    {
+      "dataset": "synth_easy",
+      "method": "hard",
+      "seed": 20261005,
+      "accuracy": 0.71,
+      "error_rate": 0.29000000000000004,
+      "rel_error_drop_vs_hard": null,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "synth_easy",
+      "method": "pseudo",
+      "seed": 20261005,
+      "accuracy": 0.71,
+      "error_rate": 0.29000000000000004,
+      "rel_error_drop_vs_hard": 0.0,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "synth_easy",
+      "method": "distill",
+      "seed": 20261005,
+      "accuracy": 0.7366666666666667,
+      "error_rate": 0.2633333333333333,
+      "rel_error_drop_vs_hard": 0.09195402298850594,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "synth_easy",
+      "method": "teacher",
+      "seed": 20261005,
+      "accuracy": 0.7416666666666667,
+      "error_rate": 0.2583333333333333,
+      "rel_error_drop_vs_hard": null,
+      "elapsed_sec": 0.02232920000096783
+    },
+    {
+      "dataset": "synth_easy",
+      "method": "hard",
+      "seed": 20261006,
+      "accuracy": 0.6816666666666666,
+      "error_rate": 0.31833333333333336,
+      "rel_error_drop_vs_hard": null,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "synth_easy",
+      "method": "pseudo",
+      "seed": 20261006,
+      "accuracy": 0.6816666666666666,
+      "error_rate": 0.31833333333333336,
+      "rel_error_drop_vs_hard": 0.0,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "synth_easy",
+      "method": "distill",
+      "seed": 20261006,
+      "accuracy": 0.7,
+      "error_rate": 0.30000000000000004,
+      "rel_error_drop_vs_hard": 0.057591623036649144,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "synth_easy",
+      "method": "teacher",
+      "seed": 20261006,
+      "accuracy": 0.74,
+      "error_rate": 0.26,
+      "rel_error_drop_vs_hard": null,
+      "elapsed_sec": 0.03068879999955243
+    },
+    {
+      "dataset": "synth_easy",
+      "method": "hard",
+      "seed": 20261007,
+      "accuracy": 0.7033333333333334,
+      "error_rate": 0.29666666666666663,
+      "rel_error_drop_vs_hard": null,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "synth_easy",
+      "method": "pseudo",
+      "seed": 20261007,
+      "accuracy": 0.7033333333333334,
+      "error_rate": 0.29666666666666663,
+      "rel_error_drop_vs_hard": 0.0,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "synth_easy",
+      "method": "distill",
+      "seed": 20261007,
+      "accuracy": 0.7266666666666667,
+      "error_rate": 0.2733333333333333,
+      "rel_error_drop_vs_hard": 0.07865168539325838,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "synth_easy",
+      "method": "teacher",
+      "seed": 20261007,
+      "accuracy": 0.7533333333333333,
+      "error_rate": 0.2466666666666667,
+      "rel_error_drop_vs_hard": null,
+      "elapsed_sec": 0.020034499999383115
+    },
+    {
+      "dataset": "synth_mid",
+      "method": "hard",
+      "seed": 20261005,
+      "accuracy": 0.6514285714285715,
+      "error_rate": 0.34857142857142853,
+      "rel_error_drop_vs_hard": null,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "synth_mid",
+      "method": "pseudo",
+      "seed": 20261005,
+      "accuracy": 0.6514285714285715,
+      "error_rate": 0.34857142857142853,
+      "rel_error_drop_vs_hard": 0.0,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "synth_mid",
+      "method": "distill",
+      "seed": 20261005,
+      "accuracy": 0.6414285714285715,
+      "error_rate": 0.35857142857142854,
+      "rel_error_drop_vs_hard": -0.028688524590163963,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "synth_mid",
+      "method": "teacher",
+      "seed": 20261005,
+      "accuracy": 0.6842857142857143,
+      "error_rate": 0.3157142857142857,
+      "rel_error_drop_vs_hard": null,
+      "elapsed_sec": 0.03259539999999106
+    },
+    {
+      "dataset": "synth_mid",
+      "method": "hard",
+      "seed": 20261006,
+      "accuracy": 0.6271428571428571,
+      "error_rate": 0.3728571428571429,
+      "rel_error_drop_vs_hard": null,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "synth_mid",
+      "method": "pseudo",
+      "seed": 20261006,
+      "accuracy": 0.6271428571428571,
+      "error_rate": 0.3728571428571429,
+      "rel_error_drop_vs_hard": 0.0,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "synth_mid",
+      "method": "distill",
+      "seed": 20261006,
+      "accuracy": 0.6542857142857142,
+      "error_rate": 0.34571428571428575,
+      "rel_error_drop_vs_hard": 0.07279693486590036,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "synth_mid",
+      "method": "teacher",
+      "seed": 20261006,
+      "accuracy": 0.6871428571428572,
+      "error_rate": 0.31285714285714283,
+      "rel_error_drop_vs_hard": null,
+      "elapsed_sec": 0.029535400000895606
+    },
+    {
+      "dataset": "synth_mid",
+      "method": "hard",
+      "seed": 20261007,
+      "accuracy": 0.6085714285714285,
+      "error_rate": 0.39142857142857146,
+      "rel_error_drop_vs_hard": null,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "synth_mid",
+      "method": "pseudo",
+      "seed": 20261007,
+      "accuracy": 0.6085714285714285,
+      "error_rate": 0.39142857142857146,
+      "rel_error_drop_vs_hard": 0.0,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "synth_mid",
+      "method": "distill",
+      "seed": 20261007,
+      "accuracy": 0.6628571428571428,
+      "error_rate": 0.3371428571428572,
+      "rel_error_drop_vs_hard": 0.13868613138686126,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "synth_mid",
+      "method": "teacher",
+      "seed": 20261007,
+      "accuracy": 0.6914285714285714,
+      "error_rate": 0.3085714285714286,
+      "rel_error_drop_vs_hard": null,
+      "elapsed_sec": 0.033165200000439654
+    },
+    {
+      "dataset": "synth_hard",
+      "method": "hard",
+      "seed": 20261005,
+      "accuracy": 0.6388888888888888,
+      "error_rate": 0.36111111111111116,
+      "rel_error_drop_vs_hard": null,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "synth_hard",
+      "method": "pseudo",
+      "seed": 20261005,
+      "accuracy": 0.6388888888888888,
+      "error_rate": 0.36111111111111116,
+      "rel_error_drop_vs_hard": 0.0,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "synth_hard",
+      "method": "distill",
+      "seed": 20261005,
+      "accuracy": 0.6633333333333333,
+      "error_rate": 0.33666666666666667,
+      "rel_error_drop_vs_hard": 0.06769230769230782,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "synth_hard",
+      "method": "teacher",
+      "seed": 20261005,
+      "accuracy": 0.6611111111111111,
+      "error_rate": 0.3388888888888889,
+      "rel_error_drop_vs_hard": null,
+      "elapsed_sec": 0.031180500000118627
+    },
+    {
+      "dataset": "synth_hard",
+      "method": "hard",
+      "seed": 20261006,
+      "accuracy": 0.6755555555555556,
+      "error_rate": 0.3244444444444444,
+      "rel_error_drop_vs_hard": null,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "synth_hard",
+      "method": "pseudo",
+      "seed": 20261006,
+      "accuracy": 0.6755555555555556,
+      "error_rate": 0.3244444444444444,
+      "rel_error_drop_vs_hard": 0.0,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "synth_hard",
+      "method": "distill",
+      "seed": 20261006,
+      "accuracy": 0.6833333333333333,
+      "error_rate": 0.31666666666666665,
+      "rel_error_drop_vs_hard": 0.023972602739726012,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "synth_hard",
+      "method": "teacher",
+      "seed": 20261006,
+      "accuracy": 0.6644444444444444,
+      "error_rate": 0.3355555555555556,
+      "rel_error_drop_vs_hard": null,
+      "elapsed_sec": 0.030121100000542356
+    },
+    {
+      "dataset": "synth_hard",
+      "method": "hard",
+      "seed": 20261007,
+      "accuracy": 0.66,
+      "error_rate": 0.33999999999999997,
+      "rel_error_drop_vs_hard": null,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "synth_hard",
+      "method": "pseudo",
+      "seed": 20261007,
+      "accuracy": 0.66,
+      "error_rate": 0.33999999999999997,
+      "rel_error_drop_vs_hard": 0.0,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "synth_hard",
+      "method": "distill",
+      "seed": 20261007,
+      "accuracy": 0.6944444444444444,
+      "error_rate": 0.3055555555555556,
+      "rel_error_drop_vs_hard": 0.10130718954248351,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "synth_hard",
+      "method": "teacher",
+      "seed": 20261007,
+      "accuracy": 0.6666666666666666,
+      "error_rate": 0.33333333333333337,
+      "rel_error_drop_vs_hard": null,
+      "elapsed_sec": 0.038604000001214445
+    },
+    {
+      "dataset": "digits",
+      "method": "hard",
+      "seed": 20261005,
+      "accuracy": 0.9648148148148148,
+      "error_rate": 0.03518518518518521,
+      "rel_error_drop_vs_hard": null,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "digits",
+      "method": "pseudo",
+      "seed": 20261005,
+      "accuracy": 0.9648148148148148,
+      "error_rate": 0.03518518518518521,
+      "rel_error_drop_vs_hard": 0.0,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "digits",
+      "method": "distill",
+      "seed": 20261005,
+      "accuracy": 0.9333333333333333,
+      "error_rate": 0.06666666666666665,
+      "rel_error_drop_vs_hard": -0.8947368421052615,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "digits",
+      "method": "teacher",
+      "seed": 20261005,
+      "accuracy": 0.9685185185185186,
+      "error_rate": 0.031481481481481444,
+      "rel_error_drop_vs_hard": null,
+      "elapsed_sec": 0.01882149999983085
+    },
+    {
+      "dataset": "digits",
+      "method": "hard",
+      "seed": 20261006,
+      "accuracy": 0.9666666666666667,
+      "error_rate": 0.033333333333333326,
+      "rel_error_drop_vs_hard": null,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "digits",
+      "method": "pseudo",
+      "seed": 20261006,
+      "accuracy": 0.9666666666666667,
+      "error_rate": 0.033333333333333326,
+      "rel_error_drop_vs_hard": 0.0,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "digits",
+      "method": "distill",
+      "seed": 20261006,
+      "accuracy": 0.937037037037037,
+      "error_rate": 0.062962962962963,
+      "rel_error_drop_vs_hard": -0.8888888888888904,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "digits",
+      "method": "teacher",
+      "seed": 20261006,
+      "accuracy": 0.9703703703703703,
+      "error_rate": 0.029629629629629672,
+      "rel_error_drop_vs_hard": null,
+      "elapsed_sec": 0.02000950000001467
+    },
+    {
+      "dataset": "digits",
+      "method": "hard",
+      "seed": 20261007,
+      "accuracy": 0.9740740740740741,
+      "error_rate": 0.025925925925925908,
+      "rel_error_drop_vs_hard": null,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "digits",
+      "method": "pseudo",
+      "seed": 20261007,
+      "accuracy": 0.9740740740740741,
+      "error_rate": 0.025925925925925908,
+      "rel_error_drop_vs_hard": 0.0,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "digits",
+      "method": "distill",
+      "seed": 20261007,
+      "accuracy": 0.9388888888888889,
+      "error_rate": 0.061111111111111116,
+      "rel_error_drop_vs_hard": -1.357142857142859,
+      "elapsed_sec": 0.0
+    },
+    {
+      "dataset": "digits",
+      "method": "teacher",
+      "seed": 20261007,
+      "accuracy": 0.9703703703703703,
+      "error_rate": 0.029629629629629672,
+      "rel_error_drop_vs_hard": null,
+      "elapsed_sec": 0.021380399999543442
+    }
+  ],
+  "determinism": {
+    "pass": true,
+    "max_abs_delta": 0.0,
+    "seed": 20261005,
+    "dataset": "synth_easy"
+  }
+}
